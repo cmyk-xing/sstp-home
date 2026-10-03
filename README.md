@@ -1,5 +1,7 @@
 # VPN Gate SSTP 节点自动优选（edgetunnel 链式代理）
 
+本部署的节点展示页为 https://cmyk-xing.github.io/sstp-home/ ，每 30 分钟检测一次。`hosts.txt` 由独立 edgetunnel 的自定义优选 API 自动读取，无需手工复制。公开页面不生成包含个人 UUID 的 `sub.txt`；客户端订阅由 `sstp.neww.cc.cd` 的私人后台提供。下方保留上游说明，其中示例参数和手动复制步骤不适用于本部署。
+
 自动抓取 [VPN Gate](https://www.vpngate.net/) 的 SSTP 家宽/机房节点，调用检测 Worker 逐个验证可用性，按国家分组、标注住宅/机房，生成可直接粘贴进 edgetunnel 后台的链式代理清单。**每 30 分钟自动更新一次。**
 
 > 核心价值：VPN Gate 的 SSTP 节点 30 分钟就换一批，手动测试筛选太痛苦。本仓库把它全自动了——你只需定期打开一个固定 URL 复制粘贴。
